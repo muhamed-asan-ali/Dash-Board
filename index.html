@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rGgfsPzrOQF9DRq9H8s2PpPzYZbfwyex1vrV7rB6G8g6B4DTlBoYHc8X5fpTbB2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DashBoard</title>
+</head>
+
+<body>
+  <div id="root" style="background-color: rgba(248, 248, 248, 1);  padding: 0px;"></div>
+
+  <div id="yourAppContainer">
+    <main-content-component></main-content-component>
+  </div>
+
+  <script>
+    angular.module('yourApp', [])
+      .component('mainContentComponent', {
+        template: `
+                  <div>
+                      <input type="text" placeholder="Search Box" />
+                      <div id="react-sidebar-container"></div>
+                      <!-- Add other content here -->
+                  </div>
+              `,
+        controller: function () {
+          // Bootstrap the AngularJS app
+          angular.bootstrap(document.getElementById('yourAppContainer'), ['yourApp']);
+        }
+      });
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
